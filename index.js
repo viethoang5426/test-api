@@ -3,7 +3,7 @@ const app = express();
 app.use(express.json());
 
 app.post("/hello", (req, res) => {
-  res.status(200).json({ message: "Hello" });
+  res.status(200).json({ message: "Hello from node js" });
 });
 
 const PORT = 3000;
