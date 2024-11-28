@@ -1,16 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello form node js");
+app.post("/hello", (req, res) => {
+  res.status(200).json({ message: "Hello" });
 });
 
-app
-  .listen(port, () => {
-    console.log(`Server listening
- on port ${port}`);
-  })
-  .on("error", (err) => {
-    console.error("Error starting server:", err);
-  });
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server : http://localhost:${PORT}`);
+});
